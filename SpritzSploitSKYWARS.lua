@@ -8,6 +8,13 @@ ESP.Names = false;
 ESP.Thickness = 2;
 ESP.Color = Color3.fromRGB(255, 255, 255)
 
+getgenv().executed = executed
+if executed == false then 
+    game.workspace.Lobby.KillPlates:remove()
+    game:GetService("Players").LocalPlayer.PlayerGui.Extra.Local:Destroy() 
+end
+executed = true
+
 for _,v in pairs(game.Workspace:GetChildren()) do 
     if v.Name == "antivoid" then 
         v:Destroy()
@@ -57,11 +64,6 @@ function getClosest()
     return closestPlayer
 end     
 
-LocalTab:Button("AntiCheat Bypass", function()
-    game.workspace.Lobby.KillPlates:remove()
-    game:GetService("Players").LocalPlayer.PlayerGui.Extra.Local:Destroy()
-    game:GetService("Players").LocalPlayer.PlayerGui.Extra.Local:Destroy() 
-end)
 
 getgenv().infjumptoggle = false
 LocalTab:Toggle("Infinite Jump",false, function(t)
