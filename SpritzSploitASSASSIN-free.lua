@@ -10,12 +10,15 @@ local VisualTab = SpritzSploit:Tab("Visuals")
 local LocalTab = SpritzSploit:Tab("LocalPlayer")
 local DescTab = SpritzSploit:Tab("Description")
 
+local old = getrenv().gcinfo
+getrenv().gcinfo = function(...)
+    return wait(9e9)
+end
+
 local CoreGui = game.CoreGui
 local ContentProvider = game.ContentProvider
-local RobloxGuis = {"RobloxGui", "TeleportGui", "RobloxPromptGui", "RobloxLoadingGui", "PlayerList", "RobloxNetworkPauseNotification", "PurchasePrompt", "HeadsetDisconnectedDialog", "ThemeProvider", "DevConsoleMaster"}
+local RobloxGuis = {"RobloxGui", "TeleportGui", "RobloxPromptGui", "RobloxLoadingGui", "PlayerList", "RobloxNetworkPauseNotification", "PurchasePrompt", "HeadsetDisconnectedDialog", "ThemeProvider", "DevConsoleMaster"}local lp = game.Players.LocalPlayer
 
-
-local lp = game.Players.LocalPlayer
 local Player = game:GetService("Players").LocalPlayer
 local Camera = game:GetService("Workspace").CurrentCamera
 local Mouse = game:GetService("Players").LocalPlayer:GetMouse()
